@@ -9,39 +9,26 @@ var filmsRouter = require('./routes/films');
 
 var app = express();
 
-let TABREQUETE = [];
+const stats = {};
+
 
 app.use((req, res, next) => {
   console.log('Time:', Date.now());
-  next();
+  
 
     
+  const currentOperation = `${req.method} ${req.path}`;
+  const currentOperationCounter = stats[currentOperation];
+  if (currentOperationCounter === undefined) stats[currentOperation] = 0;
+  stats[currentOperation] += 1;
+  const statsMessage = `Request counter : \n${Object.keys(stats)
+    .map((operation) => `- ${operation} : ${stats[operation]}`)
+    .join('\n')}
+      `;
+  console.log(statsMessage);
 
-
-    TABREQUETE.forEach(element => {
-        if (req.path==element.path) {
-            if (req.method==element.method) {
-                element.nb++
-
-            }else{
-
-                TABREQUETE.push({
-                    path:req.path,
-                    method:req.method,
-                    nb:0
-                })
-            }
-
-        }else{
-            TABREQUETE.push({
-                path:req.path,
-                method:req.method,
-                nb:0 
-            })
-        }
-    });
-
-    console.log(TABREQUETE);
+    
+    next();
 
 });
 
