@@ -80,8 +80,8 @@ router.get('/:id',(req,res) => {
 
 router.post('/', (req, res) => {
     const title = req?.body?.title?.length !== 0 ? req.body.title : undefined;
-    const duration = req?.body?.duration?.length !== 0 ? parseInt( req.body.duration) : undefined;
-    const budget = req?.body?.budget?.length !== 0 ? parseInt( req.body.budget) : undefined;
+    const duration = req?.body?.duration?.length !== 0 ? Number( req.body.duration) : undefined;
+    const budget = req?.body?.budget?.length !== 0 ? Number( req.body.budget) : undefined;
     const link = req?.body?.link?.length !== 0 ? req.body.link : undefined;
   
     console.log('POST /films');
