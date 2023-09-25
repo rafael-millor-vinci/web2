@@ -1,0 +1,17 @@
+### Read all films
+@baseUrl = http://localhost:3000
+GET {{baseUrl}}/films
+
+### read all films with a minimum duration
+GET {{baseUrl}}/films/?minimumDuration=40
+
+### Create film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "title":"Film Http 1",
+    "duration":"2",
+    "budget":"45",
+    "link":"https://www.critiqueFilmTest.com/FilmHttp1"
+}
