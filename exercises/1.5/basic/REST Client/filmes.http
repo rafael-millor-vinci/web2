@@ -10,14 +10,14 @@ POST {{baseUrl}}/films
 Content-Type: application/json
 
 {
-    "title":"Filsrytjsm Htdsrytjdtkydckytp 1",
+    "title":"Filsrytjsm Hytp 1",
     "duration":2,
     "budget":45,
     "link":"https://www.critiqueFilmTest.com/FilmHttp1"
 }
 
 ### Delete film identified by 2
-DELETE {{baseUrl}}/films/2
+DELETE {{baseUrl}}/films/17
 
 ### Update the film identified by 4
 PATCH {{baseUrl}}/films/5
@@ -30,11 +30,11 @@ Content-Type: application/json
 }
 
 ### Update all the parametre of film 4
-PUT {{baseUrl}}/films/6
+PUT {{baseUrl}}/films/18
 Content-Type: application/json
 
 {
-    "title":"Chanfrtjhfrgement",
+    "title":"Chanrgement",
     "duration":80,
     "budget":400,
     "link":"https://www.critiqueFilmTest.com/FilmHttp1"

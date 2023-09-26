@@ -176,12 +176,10 @@ router.put('/:id', (req, res) => {
 
   if (foundIndex < 0) {
 
-    const lastItemIndex = COLLECTION?.length !== 0 ? COLLECTION.length - 1 : undefined;
-  const lastId = lastItemIndex !== undefined ? COLLECTION[lastItemIndex]?.id : 0;
-  const nextId = lastId + 1;
+    
 
   const newFilm = {
-    id: nextId,
+    id: Number(req.params.id),
     title: title,
     duration: duration,
     budget: budget,
