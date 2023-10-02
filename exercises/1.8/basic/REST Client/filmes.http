@@ -1,0 +1,41 @@
+### Read all films
+@baseUrl = http://localhost:3000
+GET {{baseUrl}}/films
+
+### read all films with a minimum duration
+GET {{baseUrl}}/films/?minimumDuration=40
+
+### Create film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+    "title":"Filsrytkjsm Hytp 1",
+    "duration":2,
+    "budget":45,
+    "link":"https://www.critiqueFilmTest.com/FilmHttp1"
+}
+
+### Delete film identified by 2
+DELETE {{baseUrl}}/films/11
+
+### Update the film identified by 4
+PATCH {{baseUrl}}/films/5
+Content-Type: application/json
+
+{
+    "budget":400,
+    "link":"wsqrhewdh"
+    
+}
+
+### Update all the parametre of film 4
+PUT {{baseUrl}}/films/7
+Content-Type: application/json
+
+{
+    "title":"Chanrgement",
+    "duration":80,
+    "budget":400,
+    "link":"https://www.critiqueFilmTest.com/FilmHttp1"
+}
