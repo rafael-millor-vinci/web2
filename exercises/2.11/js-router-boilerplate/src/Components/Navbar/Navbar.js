@@ -60,6 +60,7 @@ function onNavBarClick() {
 
   navItems.forEach((item) => {
     item.addEventListener('click', (e) => {
+      // eslint-disable-next-line
       console.log(`click on ${e.target.innerHTML} navbar item`);
       if (e.target.innerHTML === 'Home') {
         HomePage();
