@@ -15,6 +15,11 @@ const HomePage = () => {
   .catch((err) => {
     console.log('HOMEpage error : ',err);
   });
+
+
+  
 };
+
+
 
 export default HomePage;
