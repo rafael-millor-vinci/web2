@@ -61,7 +61,7 @@ function renderGoBackHomeButton() {
   
 <input type="submit" value="Submit"> 
 
-</form>
+</form>-
       `;
 
       main.innerHTML += questionBox1;
@@ -69,9 +69,16 @@ function renderGoBackHomeButton() {
 
       const form = document.querySelector('form');
       form.addEventListener('submit',(e) => {
+        const data = new FormData(form);
+        let output =""
+        // eslint-disable-next-line no-restricted-syntax
+        for (const entry of data){
+          output = `${entry[0]}=${entry[1]}`;
+          console.log(output);
+        }
         e.preventDefault();
         // eslint-disable-next-line
-        console.log('calcule resultat');
+        console.log('calcule resultat'+output);
         
         
       });
