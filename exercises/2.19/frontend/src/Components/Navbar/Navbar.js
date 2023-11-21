@@ -8,9 +8,7 @@ import { Navbar as BootstrapNavbar } from 'bootstrap';
  * - the router will show the Page associated to this URI when the user click on a nav-link
  */
 
- import HomePage from '../Pages/HomePage';
- import AddMoviePage from '../Pages/AddMoviePage';
- import ViewMoviePage from '../Pages/ViewMoviePage';
+
 
 const Navbar = () => {
   const navbarWrapper = document.querySelector('#navbarWrapper');
@@ -52,25 +50,8 @@ const Navbar = () => {
       </nav>
   `;
   navbarWrapper.innerHTML = navbar;
-  onNavBarClick();
 };
 
-function onNavBarClick() {
-  const navItems = document.querySelectorAll('.nav-link');
 
-  navItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      // eslint-disable-next-line
-      console.log(`click on ${e.target.innerHTML} navbar item`);
-      if (e.target.innerHTML === 'Home') {
-        HomePage();
-      } else if (e.target.innerHTML === 'Add Movie Page') {
-        AddMoviePage();
-      } else if (e.target.innerHTML === 'View Movie Page') {
-        ViewMoviePage();
-      }
-    });
-  });
-}
 
 export default Navbar;

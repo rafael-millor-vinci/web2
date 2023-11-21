@@ -3,7 +3,7 @@ import { clearPage, renderPageTitle } from '../../utils/render';
 const ViewMoviePage = async () => {
   try {
     clearPage();
-    renderPageTitle('Pizza');
+    renderPageTitle('Film');
 
     const films = await getAllFilms();
 
