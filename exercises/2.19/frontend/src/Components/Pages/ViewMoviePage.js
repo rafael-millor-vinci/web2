@@ -51,6 +51,7 @@ function addLinesToTableHeadersAndGet(tableLines) {
         <th>Link</th>
         <th>budget</th>
         <th>duree</th>
+        <th>Option</th>
       </tr>
       ${tableLines}    
     </table>
@@ -68,10 +69,25 @@ function getAllTableLinesAsString(film) {
       <td>${film1.link}</td>
       <td>${film1.budget}</td>
       <td>${film1.duration}</td>
+      <td><input class="sup" type=button name=supprimer value=Supprimer id="${film1.id}"></td>
     </tr>`;
+
+    
   });
 
   return filmTableLines;
+}
+
+function supById() {
+  const bouton = document.querySelectorAll('.sup');
+  bouton.forEach((item) => {
+    item.addEventListener('click', () => {
+      
+      
+      
+    });
+  });
+  console.log('sup');
 }
 
 export default ViewMoviePage;
