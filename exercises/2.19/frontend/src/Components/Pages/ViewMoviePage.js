@@ -15,7 +15,7 @@ const ViewMoviePage = async () => {
 
 async function getAllFilms() {
   try {
-    const response = await fetch('/api/film');
+    const response = await fetch('/api/films');
 
     if (!response.ok) throw new Error(`fetch error : ${response.status} : ${response.statusText}`);
 
