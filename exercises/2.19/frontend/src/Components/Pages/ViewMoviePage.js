@@ -1,5 +1,6 @@
 import { clearPage, renderPageTitle } from '../../utils/render';
 
+
 const ViewMoviePage = async () => {
   try {
     clearPage();
@@ -8,6 +9,7 @@ const ViewMoviePage = async () => {
     const films = await getAllFilms();
 
     renderFilmsFromString(films);
+    supById();
   } catch (err) {
     console.error('HomePage::error: ', err);
   }
@@ -69,7 +71,9 @@ function getAllTableLinesAsString(film) {
       <td>${film1.link}</td>
       <td>${film1.budget}</td>
       <td>${film1.duration}</td>
-      <td><input class="sup" type=button name=supprimer value=Supprimer id="${film1.id}"></td>
+      <td> 
+        <button class="sup"  data-id="${film1.id}" >Supprimer </button>
+      </td>
     </tr>`;
 
     
@@ -78,11 +82,21 @@ function getAllTableLinesAsString(film) {
   return filmTableLines;
 }
 
-function supById() {
+ function supById() {
   const bouton = document.querySelectorAll('.sup');
   bouton.forEach((item) => {
-    item.addEventListener('click', () => {
-      
+    item.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const {id} = e.target.dataset;
+      const reponse = await fetch(`/api/films/${id}`,{method:'DELETE'});
+
+      if (reponse.status === 200) {
+        console.log('films sip ')
+      }else{
+        alert('film existe pas');
+      }
+
+      await ViewMoviePage();
       
       
     });
